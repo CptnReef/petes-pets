@@ -3,6 +3,16 @@ extends layout
 block content
     
   .row.justify-content-center
+    .col-sm-8
+      form(action='your-server-side-code', method='POST')
+        script.stripe-button(src='https://checkout.stripe.com/checkout.js',
+        data-key='pk_test_TYooMQauvdEDq54NiTphI7jx',
+        data-amount='999',
+        data-name='Stripe.com',
+        data-description='Widget',
+        data-image='https://stripe.com/img/documentation/checkout/marketplace.png',
+        data-locale='auto',
+        data-zip-code='true')
     .col-sm-6
       legend New Pet
       form(action="#" id="new-pet")
@@ -30,5 +40,8 @@ block content
         .form-group
             label Avatar*
             input.form-control(name="avatar" type="file" required)
+        .form-group
+            label Price*
+            textarea.form-control(name="price" required type="number")
         button(type="submit").btn.btn-primary Save
         
