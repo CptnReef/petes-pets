@@ -34,8 +34,7 @@ describe('Pets', ()  => {
           res.should.be.json;
           res.body.should.be.a('object');
           done();
-          // return res.render('pets-index', { pets: pets });
-          return res.json({ pets: pets }); 
+          
         });
   });
 
